@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExpandingButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh4-hc-ZPh">
+                                <rect key="frame" x="187" y="69" width="650" height="650"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOq-Kh-fBX" customClass="ExpandingButton" customModule="ExpandingButton" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="306" width="330" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="Skc-y1-07R"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="haQ-BD-drb"/>
+                                        </constraints>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CE-J5-zK5" userLabel="Expanded View">
+                                        <rect key="frame" x="0.0" y="0.0" width="650" height="650"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7j-l6-kKv" userLabel="Close Button">
+                                                <rect key="frame" x="612" y="20" width="18" height="22"/>
+                                                <state key="normal" image="close-icon"/>
+                                                <connections>
+                                                    <action selector="closeExpandedView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkn-v5-U4c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="J7j-l6-kKv" firstAttribute="top" secondItem="9CE-J5-zK5" secondAttribute="top" constant="20" id="SrO-gP-fjq"/>
+                                            <constraint firstAttribute="trailing" secondItem="J7j-l6-kKv" secondAttribute="trailing" constant="20" id="n1w-E2-KiB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VOq-Kh-fBX" firstAttribute="centerY" secondItem="fh4-hc-ZPh" secondAttribute="centerY" id="9rb-mo-plX"/>
+                                    <constraint firstItem="9CE-J5-zK5" firstAttribute="width" secondItem="fh4-hc-ZPh" secondAttribute="width" id="L60-F5-XVB"/>
+                                    <constraint firstAttribute="width" secondItem="fh4-hc-ZPh" secondAttribute="height" multiplier="1:1" id="gCU-j0-0vH"/>
+                                    <constraint firstItem="9CE-J5-zK5" firstAttribute="centerX" secondItem="fh4-hc-ZPh" secondAttribute="centerX" id="jq6-uC-dmU"/>
+                                    <constraint firstAttribute="width" constant="650" id="mFU-NT-blh"/>
+                                    <constraint firstItem="9CE-J5-zK5" firstAttribute="height" secondItem="fh4-hc-ZPh" secondAttribute="height" id="sVZ-Tb-fxf"/>
+                                    <constraint firstItem="9CE-J5-zK5" firstAttribute="centerY" secondItem="fh4-hc-ZPh" secondAttribute="centerY" id="uXk-Vn-qOQ"/>
+                                    <constraint firstItem="VOq-Kh-fBX" firstAttribute="centerX" secondItem="fh4-hc-ZPh" secondAttribute="centerX" id="wou-I4-StS"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-tT-zF8">
+                                <rect key="frame" x="25" y="103" width="51" height="31"/>
+                                <connections>
+                                    <action selector="darkModeToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="mLs-GV-huu"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1R-kV-xg4">
+                                <rect key="frame" x="25" y="69" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bLB-tT-zF8" firstAttribute="leading" secondItem="f1R-kV-xg4" secondAttribute="leading" id="AK0-Yn-Hby"/>
+                            <constraint firstItem="f1R-kV-xg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Hfe-qh-dfZ"/>
+                            <constraint firstItem="fh4-hc-ZPh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Icf-ku-HI4"/>
+                            <constraint firstItem="fh4-hc-ZPh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="b2l-4A-a8v"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f1R-kV-xg4" secondAttribute="trailing" constant="20" symbolic="YES" id="dA1-rY-3Ya"/>
+                            <constraint firstItem="fh4-hc-ZPh" firstAttribute="top" secondItem="f1R-kV-xg4" secondAttribute="bottom" constant="-21" id="i1L-GE-22a"/>
+                            <constraint firstItem="bLB-tT-zF8" firstAttribute="top" secondItem="f1R-kV-xg4" secondAttribute="bottom" constant="13" id="uMB-mW-ohO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="VOq-Kh-fBX" id="sI9-lU-RB6"/>
+                        <outlet property="expandedView" destination="9CE-J5-zK5" id="K9x-hv-gUg"/>
+                        <outlet property="wrapperView" destination="fh4-hc-ZPh" id="7gu-tu-c8X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-icon" width="18" height="18"/>
+    </resources>
+</document>
